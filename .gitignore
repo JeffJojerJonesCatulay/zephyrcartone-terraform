@@ -1,0 +1,31 @@
+# Local .terraform directories
+**/.terraform/*
+
+# Terraform state files (never commit these!)
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Exclude override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Plan files
+*.tfplan
+
+# Sensitive environment files
+*.env
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# --- Allow tfvars to be committed ---
+# (Remove or comment out *.tfvars if you want to keep them in Git)
+*.tfvars
+*.tfvars.json
