@@ -1,5 +1,7 @@
 module "aws_lambda_role" {
     source = "../modules/aws_iam/lambda"
+    lambda_role_name = var.lambda_role_name
+    lambda_role_policy_arn = var.lambda_role_policy_arn
 }
 
 resource "aws_lambda_function" "ordering_lambda" {
