@@ -9,21 +9,21 @@ variable "provider_region" {
 # -----------------------------------------------
 # Lambda Related Resources
 # -----------------------------------------------
-variable "lambda_ordering_handler" {
+variable "lambda_customer_handler" {
   type        = string
 }
 
-variable "lambda_ordering_function_name" {
+variable "lambda_customer_function_name" {
   type        = string
   description = "Name of the lambda function"
 }
 
-variable "lambda_ordering_runtime" {
+variable "lambda_customer_runtime" {
   type        = string
   description = "Runtime of the lambda function"
 }
 
-variable "lambda_ordering_filename" {
+variable "lambda_customer_filename" {
   type        = string
   description = "Name of the lambda function file"
 }
@@ -41,12 +41,12 @@ variable "lambda_role_policy_arn" {
 # -----------------------------------------------
 # DynamoDB Related Resources
 # -----------------------------------------------
-variable "aws_region_ordering" {
+variable "aws_region_customer" {
   description = "AWS region for DynamoDB"
   type        = string
 }
 
-variable "dynamodb_ordering_table" {
+variable "dynamodb_customer_table" {
   description = "DynamoDB table name"
   type        = string
 }
@@ -66,7 +66,7 @@ variable "billing_mode" {
   type        = string
 }
 
-variable "order_lambda_dynamodb_crud_policy_name" {
+variable "customer_lambda_dynamodb_crud_policy_name" {
   description = "Name of the lambda dynamodb crud policy"
   type        = string
 }
