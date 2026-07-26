@@ -9,4 +9,8 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+  # Backend configuration is managed by backend.hcl
+  # terraform init -backend-config=backend.hcl
+  backend "s3" {}
 }
