@@ -1,18 +1,18 @@
-variable "lambda_ordering_handler" {
+variable "lambda_handler" {
   type        = string
 }
 
-variable "lambda_ordering_function_name" {
+variable "lambda_function_name" {
   type        = string
   description = "Name of the lambda function"
 }
 
-variable "lambda_ordering_runtime" {
+variable "lambda_runtime" {
   type        = string
   description = "Runtime of the lambda function"
 }
 
-variable "lambda_ordering_filename" {
+variable "lambda_filename" {
   type        = string
   description = "Name of the lambda function file"
 }

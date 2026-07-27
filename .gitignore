@@ -29,3 +29,4 @@ terraform.rc
 # (Remove or comment out *.tfvars if you want to keep them in Git)
 *.tfvars
 *.tfvars.json
+backend.hcl
