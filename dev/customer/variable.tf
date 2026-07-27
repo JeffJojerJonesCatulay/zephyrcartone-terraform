@@ -9,16 +9,17 @@ variable "provider_region" {
 # -----------------------------------------------
 # Lambda Related Resources
 # -----------------------------------------------
-variable "lambda_customer_handler" {
+variable "lambda_role_name" {
+  description = "Name of the lambda role"
   type        = string
 }
 
-variable "lambda_customer_function_name" {
+variable "lambda_role_policy_arn" {
+  description = "ARN of the lambda role policy"
   type        = string
-  description = "Name of the lambda function"
 }
 
-variable "lambda_customer_runtime" {
+variable "lambda_runtime" {
   type        = string
   description = "Runtime of the lambda function"
 }
@@ -28,14 +29,22 @@ variable "lambda_customer_filename" {
   description = "Name of the lambda function file"
 }
 
-variable "lambda_role_name" {
-  description = "Name of the lambda role"
+variable "lambda_customer_put_handler" {
   type        = string
 }
 
-variable "lambda_role_policy_arn" {
-  description = "ARN of the lambda role policy"
+variable "lambda_customer_put_function_name" {
   type        = string
+  description = "Name of the lambda function"
+}
+
+variable "lambda_customer_get_handler" {
+  type        = string
+}
+
+variable "lambda_customer_get_function_name" {
+  type        = string
+  description = "Name of the lambda function"
 }
 
 # -----------------------------------------------

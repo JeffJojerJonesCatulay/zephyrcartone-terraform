@@ -22,13 +22,13 @@ module "aws_lambda_role" {
     dynamodb_table_arn = module.dynamodb_table.aws_dynamodb_table_arn
 }
 
-module "aws_lambda" {
+module "aws_lambda_customer_put" {
     source                        = "../modules/aws_lambda"
-    lambda_function_name = var.lambda_customer_function_name
+    lambda_function_name          = var.lambda_customer_put_function_name
     lambda_exec_role_arn          = module.aws_lambda_role.lambda_exec_role_arn
-    lambda_handler       = var.lambda_customer_handler
-    lambda_runtime       = var.lambda_customer_runtime
-    lambda_filename      = var.lambda_customer_filename
+    lambda_runtime                = var.lambda_runtime
+    lambda_filename               = var.lambda_customer_filename
+    lambda_handler                = var.lambda_customer_put_handler
     timeout                       = 20
     memory_size                   = 1024
 
@@ -38,4 +38,19 @@ module "aws_lambda" {
     }
 }
 
+module "aws_lambda_customer_get" {
+    source                        = "../modules/aws_lambda"
+    lambda_function_name          = var.lambda_customer_get_function_name
+    lambda_exec_role_arn          = module.aws_lambda_role.lambda_exec_role_arn
+    lambda_runtime                = var.lambda_runtime
+    lambda_filename               = var.lambda_customer_filename
+    lambda_handler                = var.lambda_customer_get_handler
+    timeout                       = 20
+    memory_size                   = 1024
+
+    environment_variables = {
+      "CUSTOMER_TABLE_NAME" = var.dynamodb_customer_table
+      "REGION_DYNAMODB_NAME" = var.aws_region_customer
+    }
+}
 
