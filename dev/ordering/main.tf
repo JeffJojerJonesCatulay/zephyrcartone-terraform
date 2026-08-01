@@ -38,4 +38,19 @@ module "aws_lambda" {
     }
 }
 
+# -----------------------------------------------
+# Step Function Related Resources
+# -----------------------------------------------
 
+module "aws_iam_step_functions_role" {
+    source = "../modules/aws_iam/step_funtions"
+    name = var.aws_sfn_role_name
+    policy_arns = var.aws_sfn_policy_arns
+}
+
+module "aws_step_functiom" {
+    source = "../modules/aws_step_functiom"
+    state_machine_name = var.state_machine_name
+    state_machine_definition = var.state_machine_definition
+    state_machine_role_arn = module.aws_iam_step_functions_role.sfn_role
+}
