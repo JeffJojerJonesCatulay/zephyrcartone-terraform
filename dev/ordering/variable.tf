@@ -70,3 +70,27 @@ variable "order_lambda_dynamodb_crud_policy_name" {
   description = "Name of the lambda dynamodb crud policy"
   type        = string
 }
+
+# -----------------------------------------------
+# Step Function Related Resources
+# -----------------------------------------------
+
+variable "aws_sfn_role_name" {
+    type        = string
+    description = "Name of the SFN role"
+}
+
+variable "aws_sfn_policy_arns" {
+    type        = list(string)
+    description = "List of policy ARNs for SFN role"
+}
+
+variable "state_machine_name" {
+  type        = string
+  description = "Name of the state machine"
+}
+
+variable "state_machine_definition" {
+  type        = string
+  description = "Definition of the state machine"
+}
